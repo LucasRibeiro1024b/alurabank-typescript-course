@@ -36,6 +36,9 @@ export class NegociacoesView extends View<Negociacoes> {
         <tfoot>
         </tfoot>
       </table>
+      <script>
+          alert('is there an optional parameter?');
+      </script>
     `;
   }
 }

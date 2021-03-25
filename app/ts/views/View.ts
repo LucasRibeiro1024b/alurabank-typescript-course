@@ -1,13 +1,18 @@
 //this class works with T type, could be any letter or name
 export abstract class View <T> {
   protected _elemento: JQuery;
+  private _escapar: boolean;
 
-  constructor(seletor: string){
+  constructor(seletor: string, escapar?: boolean){
     this._elemento = $(seletor);
+    this._escapar = escapar;
   }
 
   update(model: T) {
-    this._elemento.html(this.template(model));
+    let template = this.template(model);
+    if(this._escapar)
+      template = template.replace(/<script>[\s\S]*?<\/script>/g, '');
+    this._elemento.html(template);
   }
 
   abstract template(model: T): string;

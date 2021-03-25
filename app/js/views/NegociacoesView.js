@@ -40,6 +40,9 @@ System.register(["./View"], function (exports_1, context_1) {
         <tfoot>
         </tfoot>
       </table>
+      <script>
+          alert('is there an optional parameter?');
+      </script>
     `;
                 }
             };
